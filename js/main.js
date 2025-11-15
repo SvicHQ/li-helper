@@ -4,6 +4,8 @@ if (typeof window.mainLoaded === 'undefined') {
     
     document.addEventListener('DOMContentLoaded', () => {
 
+        document.getElementById("siteNotes").innerText = localStorage.getItem("siteNotes") || "";
+
     // Access control for AFK Logs tab (keeping this logic)
     const allowedUsers = ["sabbir12@", "lucix", "admin"]; // Add allowed usernames here
     // Assuming 'username' variable is defined elsewhere or retrieved
@@ -240,4 +242,9 @@ if (typeof window.mainLoaded === 'undefined') {
         });
     });
 });
+}
+
+function saveNote() {
+    siteNotes = document.getElementById("siteNotes").value || "";
+    localStorage.setItem("siteNotes", siteNotes);
 }
