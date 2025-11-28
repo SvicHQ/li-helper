@@ -2,6 +2,14 @@
 * {
     box-sizing: border-box;
 }
+
+:root {
+    --white-color: white;
+    --gray-color: rgb(230, 230, 230);
+    --sky-blue-color: rgb(0, 150, 255);
+    --blue-color: rgb(0, 100, 255);
+}
+
 .input-group {
     position: relative;
     overflow: visible !important;
@@ -21,8 +29,43 @@ body {
     line-height: 1.6;
 }
 
-#login-screen {
-    padding: 10px;
+/* Login */
+.login-screen {
+    width: 400px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    border: solid 2px var(--gray-color);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0px 0px 5px var(--gray-color);
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.login-screen input {
+    width: 100%;
+
+    box-sizing: border-box;
+    border: solid 2px var(--gray-color);
+    border-radius: 8px;
+    padding: 8px;
+    margin-bottom: 1em;
+    font-size: 18px;
+    outline-color: var(--sky-blue-color);
+}
+
+.login-screen input[type="submit"] {
+    background-color: var(--sky-blue-color);
+    color: var(--white-color);
+    cursor: pointer;
+    transition: 300ms;
+}
+
+.login-screen input[type="submit"]:hover {
+    background-color: var(--blue-color);
 }
 
 .main-wrapper {
