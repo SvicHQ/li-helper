@@ -41,14 +41,14 @@ body {
     outline-color: var(--sky-blue-color);
 }
 
-.login-div input[type="button"] {
+.login-div input[type="submit"] {
     background-color: var(--sky-blue-color);
     color: var(--white-color);
     cursor: pointer;
     transition: 300ms;
 }
 
-.login-div input[type="button"]:hover {
+.login-div input[type="submit"]:hover {
     background-color: var(--blue-color);
 }
 

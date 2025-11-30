@@ -4,19 +4,105 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LifeInvader</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./other.css">
     <link rel="shortcut icon" href="./assets/lifeinvader.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <!-- Scripts -->
+    <script src="./main.js"></script>
+    <script src="./module.js"></script>
 </head>
 <body>
     <!-- login -->
-    <div class="login-div">
-        <h2>Login</h2>
+    <div class="login-div" id="login_div">
+        <h2>Lifeinvader</h2>
+        <p>Login form for lifeinvader employee.</p>
+        <br>
+        
         <form action="" onsubmit="event.preventDefault()">
             <input type="text" name="" id="login_username" placeholder="username" required>
             <input type="password" name="" id="login_password" placeholder="password" required>
-            <input type="button" id="login_submit" value="Login">
+            <input type="submit" id="login_submit" value="Login">
         </form>
         <p>© project developed & maintaned by <a href="https://bishalqx980.github.io/bishalqx980/">bishalqx980</a></p>
     </div>
+
+    <!-- Main Section -->
+    <div class="layout">
+        <aside class="sidebar">
+            <div class="logo">
+                <i class="bi bi-laptop-fill"></i> LifeInvader
+            </div>
+            <hr><br>
+
+            <nav class="nav">
+                <button class="nav-btn active" data-content="Car Ads">
+                    <i class="bi bi-car-front-fill"></i> Car Ads
+                </button>
+
+                <button class="nav-btn" data-content="House Ads">
+                    <i class="bi bi-house-door-fill"></i> House Ads
+                </button>
+
+                <button class="nav-btn" data-content="Clothing Ads">
+                    <i class="bi bi-bag-fill"></i> Clothing Ads
+                </button>
+
+                <button class="nav-btn" data-content="Items Ads">
+                    <i class="bi bi-box-seam-fill"></i> Items Ads
+                </button>
+
+                <button class="nav-btn" data-content="Business Ads">
+                    <i class="bi bi-building-fill"></i> Business Ads
+                </button>
+            </nav>
+
+            <div class="bottom">
+                <button class="logout">
+                    Logout <i class="bi bi-arrow-right-square-fill"></i>
+                </button>
+            </div>
+        </aside>
+
+        <div class="main">
+            <header class="topbar">
+                <div class="title">Welcome to LifeInvader</div>
+                <button class="recent">Recent</button>
+            </header>
+
+            <div class="content">
+                <div class="center-card">
+                    <h2 class="card-title">Car Ads Creator</h2>
+
+                    <p class="card-sub">
+                        Create professional LifeInvader advertisements following guidelines
+                    </p>
+
+                    <div class="card-section">
+                        <!-- Your form or content goes here -->
+                        <p style="text-align:center; color:#888;">Your content here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const buttons=document.querySelectorAll('.nav-btn')
+        const content=document.querySelector('.content')
+        const title=document.querySelector('.title')
+
+        buttons.forEach(btn => {
+            btn.addEventListener('click',()=>{
+                document.querySelector('.nav-btn.active')?.classList.remove('active')
+                btn.classList.add('active')
+                const text=btn.dataset.content
+                content.textContent=text
+                title.textContent=text
+            })
+        })
+    </script>
+
+
 </body>
 </html>

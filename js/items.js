@@ -26,7 +26,6 @@ if (typeof window.itemsLoaded === 'undefined') {
         "25% juice",
         "25% power juice",
         "25% protection juice",
-        "a grand ticket",
         "a car ticket",
         "car ticket",
         "alcohlic beverage cheetah",

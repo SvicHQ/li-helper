@@ -1,0 +1,158 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lexend", sans-serif;
+}
+
+body {
+    background: #eef2f7;
+}
+
+.layout {
+    height: 100vh;
+    display: flex;
+}
+
+.sidebar {
+    width: 240px;
+    background: linear-gradient(180deg, rgb(6, 42, 97), #002c85, #020e29);
+    filter: opacity(80%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 25px 20px;
+    box-shadow: 4px 0 10px rgba(0,0,0,0.15);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+hr {
+    opacity: 25%;
+}
+
+.nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-btn i {
+    margin-right: 10px;
+    font-size: 18px;
+    vertical-align: middle;
+}
+
+.nav-btn {
+    background: rgba(255,255,255,0.07);
+    border: none;
+    padding: 12px 15px;
+    color: white;
+    border-radius: 8px;
+    text-align: left;
+    cursor: pointer;
+    font-size: 15px;
+    transition: 0.2s;
+}
+
+.nav-btn:hover {
+    background: rgba(255,255,255,0.15);
+}
+
+.nav-btn.active {
+    background: white;
+    color: #1f4aa0;
+    font-weight: 600;
+}
+
+.bottom {
+    margin-top: auto;
+}
+
+.logout {
+    width: 100%;
+    margin-top: 20px;
+    padding: 12px;
+    background: #d63636;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.logout:hover {
+    background: #bb2d2d;
+}
+
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.topbar {
+    height: 65px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 25px;
+    font-size: 20px;
+    font-weight: 600;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.recent {
+    background: #3f76ff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    color: white;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.recent:hover {
+    background: #3162d6;
+}
+
+.content {
+    flex: 1;
+    padding: 30px;
+    font-size: 22px;
+}
+
+.center-card {
+    width: 80%;
+    max-width: 850px;
+    margin: 0 auto;
+    background: white;
+    padding: 35px;
+    border-radius: 14px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.card-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: #1f4aa0;
+}
+
+.card-sub {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+.card-section {
+    margin-top: 15px;
+    text-align: left;
+}

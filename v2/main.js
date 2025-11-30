@@ -1,61 +1,59 @@
-document.addEventListener("DOMContentLoaded", function() {
-    // Login
-    document.getElementById("login_submit").addEventListener("click", function() {
-        const authorized_users = ["bishalqx980"];
-        const stored_password_hash = "32ad188ae74bd4f2377fc55ff9f83f55d486971a0da5b39d6d347e2d861502d8";
+document.addEventListener("DOMContentLoaded", async function() {
+    // Site Json data
+    let site_data = JSON.parse(localStorage.getItem("site_data") || "{}");
+    
+    if (site_data.username && site_data.password) {
+        await siteLogin(site_data.username, site_data.password, true);
+    }
 
+    // Login
+    document.getElementById("login_submit").addEventListener("click", async function() {
         const username = document.getElementById("login_username").value;
         const password = document.getElementById("login_password").value;
 
-        if (!authorized_users.includes(login_username)) {
-            alert("Unauthorized user!");
-            return;
-        }
+        let response = await siteLogin(username, password);
 
-        if 
+        if (response) {
+            site_data.username = username;
+            site_data.password = response; // whcih is password hash
+
+            localStorage.setItem("site_data", JSON.stringify(site_data));
+        }
     })
 })
 
+async function siteLogin(username, password, is_hash = false) {
+    const authorized_usernames = [
+        "bishalqx980",
+        "employee69"
+    ];
 
+    const authorized_password_hashs = [
+        "32ad188ae74bd4f2377fc55ff9f83f55d486971a0da5b39d6d347e2d861502d8",
+        "dd486405220c65c6ebae10982ef75bce7f8e4999dfa2d5fdce56536d7acd1b83"
+    ];
 
+    let password_hash;
 
-async function sitelogin() {
-    const local_password_hash = localStorage.getItem("login_password");
-
-    const login_username =
-        document.getElementById("login_username").value.trim() ||
-        localStorage.getItem("login_username");
-
-    const login_password = document.getElementById("login_password").value;
-
-    
-
-    // --- USERNAME CHECK ---
-    
-
-    // --- PASSWORD HASH CHECK ---
-    let entered_hash;
-
-    if (local_password_hash) {
-        // Already logged in before
-        entered_hash = local_password_hash;
+    if (is_hash) {
+        password_hash = password;
     } else {
-        // First-time login → hash the typed password
-        entered_hash = await sha256(login_password);
+        password_hash = await sha256(password);
+    }
+    
+    if (!authorized_usernames.includes(username)) {
+        alert("Unauthorized user!");
+        return;
     }
 
-    if (entered_hash !== stored_password_hash) {
+    if (!authorized_password_hashs.includes(password_hash)) {
         alert("Incorrect password!");
         return;
     }
 
-    // --- SUCCESS ---
-    console.log("Login successful!");
-    document.getElementById("login-screen").style.display = "none";
-    document.getElementById("main-app").style.display = "";
+    const login_div = document.getElementById("login_div");
+    login_div.style.display = "none";
 
-    // Save login
-    localStorage.setItem("login_username", login_username);
-    localStorage.setItem("login_password", entered_hash);
-    localStorage.setItem("auto_login", "1");
+    console.log("Login successful!");
+    return password_hash;
 }
