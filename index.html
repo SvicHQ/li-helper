@@ -78,6 +78,13 @@
                         </li>
 
                         <li>
+                            <a href="#" data-section="template-ads" class="nav-link">
+                                <i class="fas fa-toolbox"></i>
+                                <span>Template Ads</span>
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="#" data-section="history" class="nav-link">
                                 <i class="fas fa-history"></i>
                                 <span>History</span>
@@ -85,12 +92,17 @@
                         </li>
                     </ul>
                     <br>
-                    <textarea class="note-area" id="siteNotes" placeholder="Notes" onkeyup="saveNote()"></textarea>
-                    <div class="note_btn_area">
-                        <button class="btn btn-secondary" onclick="clearNotes()">Clear</button>
+
+                    <!-- <textarea class="note-area" id="siteNotes" placeholder="Notes" onkeyup="saveNote()"></textarea> -->
+                    <div class="note_btn_area" style="text-align: center;margin: auto;margin-bottom: 0;">
+                        <!-- <button class="btn btn-secondary" onclick="clearNotes()">Clear</button> -->
                         <!-- <button class="btn btn-light" onclick="toggleRecent()">Recent</button> -->
                         <button class="btn reset-button" onclick="sitelogout()">Logout</button>
                     </div>
+                    <br>
+                    <!-- <p style="color: white;font-style: italic;text-align: center;">Developed by `Unknown` & Enhnaced by <a href="https://bishalqx980.github.io/bishalqx980/" style="color: red;text-decoration: none;font-weight: bold;">bishalqx980</a><br>
+                        <span style="color: rgb(0, 255, 0);">< Powered by Rivingtons ></span>
+                    </p> -->
                 </nav>
             </aside>
 
@@ -689,7 +701,47 @@
                     </section>
                 </div>
 
-                <!-- Premium Template Ads Section -->
+                <!-- Template ads Section -->
+                <div id="template-ads" class="tab-content">
+                    <section class="tab-section card shadow">
+                        <div class="card-body form-container">
+
+                            <div class="section-header"  style="text-align: center;">
+                                <h2 class="form-title">
+                                    <i class="fas fa-toolbox"></i> Template Ads
+                                <p class="section-description">Get professional templates advertisements following LifeInvader guidelines</p>
+                            </div>
+
+                            
+                            <label for=""><i class="fas fa-hashtag"></i> Search templates:</label>
+                            <div class="autocomplete-box">
+                                <input type="text" id="itemInput" placeholder="Type to search..." autocomplete="off">
+                                <ul id="dropdownList" class="dropdown hidden"></ul>
+                            </div>
+
+                            <div class="button-group">
+                                <button id="template_copy" class="btn btn-secondary copy-button">
+                                    <i class="fas fa-copy"></i> <span>Copy</span>
+                                </button>
+                                <button id="template_reset" class="btn reset-button">
+                                    <i class="fas fa-undo"></i> Reset
+                                </button>
+                            </div>
+
+                            <div class="form-group">
+                                <label><i class="fas fa-file-alt"></i> Output:</label>
+                                <div id="template_output" class="output-box">
+                                    <div class="output-placeholder">
+                                        <i class="fas fa-lightbulb"></i>
+                                        <p>Final edited template will be shown here...</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- History Section -->
                 <div id="history" class="tab-content">
                     <section class="tab-section card shadow">
                         <div class="card-body form-container">
@@ -731,7 +783,7 @@
     <script src="js/items.js"></script>
     <script src="js/business.js"></script>
     <script src="js/main.js"></script>
-    <script src="js/templates.js"></script>
+    <script src="js/template.js"></script>
 </body>
 
 </html>

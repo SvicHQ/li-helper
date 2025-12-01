@@ -899,3 +899,53 @@ body {
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
 }
+
+.autocomplete-box {
+    position: relative;
+    width: 100%;
+}
+
+#itemInput {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    border: 1px solid #e9e9e9;
+    border-radius: 6px;
+    outline-color: #adcbeb;
+    transition: 300ms;
+    box-shadow: 0px 0px 10px rgb(187, 221, 248);
+}
+
+.dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: white;
+    border: 1px solid #dcdcdc;
+    border-top: none;
+    max-height: 180px;
+    overflow-y: auto;
+    border-radius: 0 0 6px 6px;
+    display: block;
+    z-index: 20;
+
+    transition: all 0.15s ease-in-out;
+}
+
+.dropdown.hidden {
+    display: none;
+}
+
+.dropdown li {
+    list-style: none;
+    padding: 10px 12px;
+    cursor: pointer;
+    transition: background 0.1s;
+}
+
+.dropdown li:hover,
+.dropdown li.active {
+    background: #007bff;
+    color: white;
+}
