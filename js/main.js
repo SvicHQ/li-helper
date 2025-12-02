@@ -8,7 +8,7 @@ if (typeof window.mainLoaded === 'undefined') {
     
     document.addEventListener('DOMContentLoaded', () => {
 
-        // document.getElementById("siteNotes").innerText = localStorage.getItem("siteNotes") || "";
+        document.getElementById("siteNotes").innerText = localStorage.getItem("siteNotes") || "";
 
     // Access control for AFK Logs tab (keeping this logic)
     const allowedUsers = ["bishalqx980"]; // Add allowed usernames here

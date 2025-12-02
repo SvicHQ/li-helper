@@ -85,6 +85,13 @@
                         </li>
 
                         <li>
+                            <a href="#" data-section="personal-notes" class="nav-link">
+                                <i class="fas fa-note-sticky"></i>
+                                <span>Notes</span>
+                            </a>
+                        </li>
+
+                        <li>
                             <a href="#" data-section="history" class="nav-link">
                                 <i class="fas fa-history"></i>
                                 <span>History</span>
@@ -93,9 +100,7 @@
                     </ul>
                     <br>
 
-                    <!-- <textarea class="note-area" id="siteNotes" placeholder="Notes" onkeyup="saveNote()"></textarea> -->
                     <div class="note_btn_area" style="text-align: center;margin: auto;margin-bottom: 0;">
-                        <!-- <button class="btn btn-secondary" onclick="clearNotes()">Clear</button> -->
                         <!-- <button class="btn btn-light" onclick="toggleRecent()">Recent</button> -->
                         <button class="btn reset-button" onclick="sitelogout()">Logout</button>
                     </div>
@@ -741,6 +746,26 @@
                     </section>
                 </div>
 
+                <!-- Personal Notes -->
+                <div id="personal-notes" class="tab-content">
+                    <section class="tab-section card shadow">
+                        <div class="card-body form-container">
+                            <div class="section-header"  style="text-align: center;">
+                                <h2 class="form-title">
+                                    <i class="fas fa-note-sticky"></i> Notes
+                                </h2>
+                                <p class="section-description">Tips: Note section is expandable :)</p>
+                                
+                                <textarea class="note-area" id="siteNotes" placeholder="Notes" onkeyup="saveNote()"></textarea>
+                                <br><br>
+                                <button class="btn btn-secondary" onclick="clearNotes()"><i class="fas fa-eraser"></i> Clear</button>
+                            </div>
+                            <br><br>
+                            <div id="recent-log-history" style="text-align: left;"></div>
+                        </div>
+                    </section>
+                </div>
+
                 <!-- History Section -->
                 <div id="history" class="tab-content">
                     <section class="tab-section card shadow">
@@ -749,7 +774,7 @@
                                 <h2 class="form-title">
                                     <i class="fas fa-history"></i> History
                                 </h2>
-                                <button class="btn reset-button" onclick="clearRecentHistory()">Clear History</button>
+                                <button class="btn reset-button" onclick="clearRecentHistory()"><i class="fas fa-eraser"></i> Clear History</button>
                                 <!-- <p class="section-description">Get professional templates advertisements following LifeInvader guidelines</p> -->
                             </div>
                             <br><br>
