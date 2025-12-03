@@ -226,7 +226,7 @@ if (typeof window.itemsLoaded === 'undefined') {
         "medium quality tyres",
         "milk",
         "mining resources",
-        "Monowheel",
+        "a Monowheel",
         "multivitamin juice",
         "mushroom seeds",
         "mushrooms",
