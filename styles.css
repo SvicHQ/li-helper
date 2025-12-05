@@ -950,3 +950,43 @@ body {
     background: #007bff;
     color: white;
 }
+
+#newUpdate {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 300px;
+
+    background: rgb(255, 255, 255, 0.5);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 0 200px rgb(0, 150, 255);
+
+    border: 2px solid rgb(216, 216, 216);
+    border-radius: 10px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+    z-index: 9999;
+}
+
+#newUpdate h2 {
+    margin: 0;
+    padding: 12px 20px;
+    font-size: 22px;
+    font-weight: bold;
+
+    background: rgba(192, 193, 255, 0.5);
+    backdrop-filter: blur(5px);
+    border-bottom: 1px solid rgb(255, 255, 255);
+
+    width: 100%;
+    text-align: center;
+}
+
+#newUpdate .content {
+    padding: 20px;
+    flex: 1;
+}
