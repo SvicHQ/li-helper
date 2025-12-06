@@ -1,7 +1,8 @@
 const message = `
-- Added <b>457</b> Car's State Value 😬!!
+- Added dark mode (beta)
+To change the theme, goto About section and you will see the button for changing theme.
 `;
-const update_id = "update_05_12";
+const update_id = "update_06_12";
 
 function updateLog() {
     const status = localStorage.getItem(update_id);
