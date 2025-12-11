@@ -64,6 +64,7 @@ const items = [
     "Selling a mansion. Price: Negotiable.",
     "Selling mansion №25. Price: Negotiable.",
     "Renting out house №758. Rent: Negotiable.",
+    "Renting out a house. Rent: Negotiable.",
     "Renting out a house. Rent: $200.000 for 7 days.",
     "Renting out a house. Rent: $200.000 per week.",
     "Selling a Casino penthouse. Price: Negotiable.",
