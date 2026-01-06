@@ -268,13 +268,8 @@ async function sha256(text) {
 }
 
 async function sitelogin() {
-    const local_password_hash = localStorage.getItem("login_password");
-
-    const login_username =
-        document.getElementById("login_username").value.trim() ||
-        localStorage.getItem("login_username");
-
-    const login_password = document.getElementById("login_password").value;
+    const login_username = document.getElementById("login_username").value.trim() || localStorage.getItem("login_username");
+    const login_password = document.getElementById("login_password").value || localStorage.getItem("login_password");
 
     const authorized_users = ["bishalqx980"];
     const stored_password_hash = "32f5581a5d4844a12f5ed77334f58ab1511eb95e4ff953d0c3a995389fcffde9";
@@ -286,17 +281,15 @@ async function sitelogin() {
     }
 
     // --- PASSWORD HASH CHECK ---
-    let entered_hash;
+    let entered_password_hash;
 
-    if (local_password_hash) {
-        // Already logged in before
-        entered_hash = local_password_hash;
+    if (login_password == stored_password_hash) {
+        entered_password_hash = login_password;
     } else {
-        // First-time login → hash the typed password
-        entered_hash = await sha256(login_password);
+        entered_password_hash = await sha256(login_password);
     }
 
-    if (entered_hash !== stored_password_hash) {
+    if (entered_password_hash !== stored_password_hash) {
         alert("Incorrect password!");
         return;
     }
