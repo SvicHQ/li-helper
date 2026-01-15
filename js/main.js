@@ -5,6 +5,11 @@ if (typeof window.mainLoaded === 'undefined') {
     if (localStorage.getItem("auto_login") === "1") {
         sitelogin();
     }
+
+    if (localStorage.getItem("session") === "authenticated") {
+        document.getElementById("login-screen").style.display = "none";
+        document.getElementById("main-app").style.display = "";
+    }
     
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -268,41 +273,28 @@ async function sha256(text) {
 }
 
 async function sitelogin() {
-    const login_username = document.getElementById("login_username").value.trim() || localStorage.getItem("login_username");
-    const login_password = document.getElementById("login_password").value || localStorage.getItem("login_password");
+    const username = document.getElementById("login_username").value.trim();
+    const password = document.getElementById("login_password").value;
 
-    const authorized_users = ["bishalqx980"];
-    const stored_password_hash = "b006a92649f8acd53b04549c4f81e6dc577e051494ba6f0dfdf2430e7848a82e";
+    const AUTH_USER = "bishalqx980";
+    const STORED_HASH = "b006a92649f8acd53b04549c4f81e6dc577e051494ba6f0dfdf2430e7848a82e";
 
-    // --- USERNAME CHECK ---
-    if (!authorized_users.includes(login_username)) {
+    if (username !== AUTH_USER) {
         alert("Unauthorized user!");
         return;
     }
 
-    // --- PASSWORD HASH CHECK ---
-    let entered_password_hash;
+    const hash = await sha256(password);
 
-    if (login_password == stored_password_hash) {
-        entered_password_hash = login_password;
-    } else {
-        entered_password_hash = await sha256(login_password);
-    }
-
-    if (entered_password_hash !== stored_password_hash) {
+    if (hash !== STORED_HASH) {
         alert("Incorrect password!");
         return;
     }
 
-    // --- SUCCESS ---
-    console.log("Login successful!");
+    // success
+    localStorage.setItem("session", "authenticated");
     document.getElementById("login-screen").style.display = "none";
     document.getElementById("main-app").style.display = "";
-
-    // Save login
-    localStorage.setItem("login_username", login_username);
-    localStorage.setItem("login_password", entered_password_hash);
-    localStorage.setItem("auto_login", "1");
 }
 
 function sitelogout() {
