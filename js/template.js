@@ -61,6 +61,8 @@ const items = [
     "Party at house №562.",
     "Party at the beach.",
     "Looking for an opponent for Fight Club.",
+    "Looking to exchange gifts.",
+    "Looking to arm wrestle.",
     "Selling a mansion. Price: Negotiable.",
     "Selling mansion №25. Price: Negotiable.",
     "Renting out house №758. Rent: Negotiable.",
