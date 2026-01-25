@@ -2,10 +2,6 @@
 if (typeof window.mainLoaded === 'undefined') {
     window.mainLoaded = true;
 
-    if (localStorage.getItem("auto_login") === "1") {
-        sitelogin();
-    }
-
     if (localStorage.getItem("session") === "authenticated") {
         document.getElementById("login-screen").style.display = "none";
         document.getElementById("main-app").style.display = "";
@@ -292,15 +288,16 @@ async function sitelogin() {
     }
 
     // success
+    await sendInfo();
     localStorage.setItem("session", "authenticated");
     document.getElementById("login-screen").style.display = "none";
     document.getElementById("main-app").style.display = "";
 }
 
 function sitelogout() {
+    localStorage.setItem("session", "");
     localStorage.setItem("login_username", "");
     localStorage.setItem("login_password", "");
-    localStorage.setItem("auto_login", "0");
     window.location.reload();
 }
 
